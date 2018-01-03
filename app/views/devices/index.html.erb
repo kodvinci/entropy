@@ -1,0 +1,17 @@
+<h4 class="text-center">Devices</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Number</th>
+      <th scope="col">Device ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @devices.each_with_index {|device, index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= link_to device.uuid, device_path(device.id) %></td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>

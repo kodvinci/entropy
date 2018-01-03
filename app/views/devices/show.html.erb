@@ -1,0 +1,20 @@
+<h4 class="text-center"><%= @device.uuid %></h4>
+
+<div class="row">
+  <%= line_chart @device.random_numbers(params[:time]) %>
+</div>
+
+<div class="row">
+  <span class="col-sm-3">
+    <%= link_to 'Past 1 Hour', device_path(@device, time: '1h'), class: 'btn btn-primary' %>
+  </span>
+  <span class="col-sm-3">
+    <%= link_to 'Past 6 Hours', device_path(@device, time: '6h'), class: 'btn btn-primary' %>
+  </span>
+  <span class="col-sm-3">
+    <%= link_to 'Past 12 Hours', device_path(@device, time: '12h'), class: 'btn btn-primary' %>
+  </span>
+  <span class="col-sm-3">
+    <%= link_to 'Past 1 Day', device_path(@device, time: '1d'), class: 'btn btn-primary' %>
+  </span>
+</div>
