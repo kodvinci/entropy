@@ -8,6 +8,10 @@
 #  updated_at :datetime         not null
 #
 
+require 'net/http'
+require 'uri'
+require 'json'
+
 class Device < ApplicationRecord
   validates :uuid, presence: true
   validates :uuid, uniqueness: true
